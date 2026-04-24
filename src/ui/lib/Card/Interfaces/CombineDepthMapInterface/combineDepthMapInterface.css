@@ -1,0 +1,11 @@
+.combine-depthmap-select {
+    width: 80%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #666;
+    border-radius: 4px;
+    color: black;
+}
+.combine-depthmap-select.disabled {
+    pointer-events: none;
+}

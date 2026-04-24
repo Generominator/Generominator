@@ -1,0 +1,19 @@
+.button-card-ui {
+    width: 90%;
+    padding: calc(0.5rem * var(--zoom, 1)) 0;
+    background-color: hsla(3, 90%, 60%, 0.5);
+    color: black;
+    border: none;
+    border-radius: calc(8.8px * var(--zoom, 1));
+    font-size: calc(12px * var(--zoom, 1));
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.button-card-ui.pressed {
+    background-color: hsla(3, 90%, 60%, 0.75);
+}
+.button-card-ui.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}

@@ -1,0 +1,86 @@
+{
+    "cards": [
+        {
+            "jsonId": "node_0",
+            "title": "Sentiment Analysis",
+            "posX": 257.5,
+            "posY": 245.39999389648438,
+            "inputs": [
+                {
+                    "type": "edge",
+                    "value": "node_1",
+                    "index": 0
+                }
+            ]
+        },
+        {
+            "jsonId": "node_1",
+            "title": "Text",
+            "posX": 105.5,
+            "posY": 45.066650390625
+        },
+        {
+            "jsonId": "node_2",
+            "title": "Sentiment Analysis",
+            "posX": 525.5,
+            "posY": 443.3999938964844,
+            "inputs": [
+                {
+                    "type": "edge",
+                    "value": "node_3",
+                    "index": 0
+                }
+            ]
+        },
+        {
+            "jsonId": "node_3",
+            "title": "Bluesky Feed Card",
+            "posX": 529.5,
+            "posY": 241.39999389648438,
+            "inputs": [
+                {
+                    "type": "edge",
+                    "value": "node_4",
+                    "index": 0
+                }
+            ]
+        },
+        {
+            "jsonId": "node_4",
+            "title": "Const Text",
+            "posX": 635.5,
+            "posY": 39.4000244140625
+        },
+        {
+            "jsonId": "node_5",
+            "title": "get weather at a location",
+            "posX": 1004.5,
+            "posY": 475.066650390625,
+            "inputs": [
+                {
+                    "type": "edge",
+                    "value": "node_6",
+                    "index": 0
+                }
+            ]
+        },
+        {
+            "jsonId": "node_6",
+            "title": "Location from Coordinates",
+            "posX": 312.5,
+            "posY": 612.3999938964844,
+            "inputs": [
+                {
+                    "type": "edge",
+                    "value": "node_0",
+                    "index": 0
+                },
+                {
+                    "type": "edge",
+                    "value": "node_2",
+                    "index": 0
+                }
+            ]
+        }
+    ]
+}

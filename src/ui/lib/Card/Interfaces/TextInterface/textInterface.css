@@ -1,0 +1,14 @@
+.text-card-input {
+    width: 80%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: calc(1px * var(--zoom, 1)) solid #666;
+    border-radius: calc(4px * var(--zoom, 1));
+    font-size: calc(12px * var(--zoom, 1));
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+.text-card-input.disabled {
+    pointer-events: none;
+}

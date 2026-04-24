@@ -1,0 +1,109 @@
+.card-bank {
+    height: 100%;
+    flex-grow: 1;
+    background-color: #525f7a;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+    gap: 1rem;
+}
+.search-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid grey;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.search-bar input {
+    width: 100%;
+    height: 32px;
+    font-family: unset;
+    font-size: unset;
+    color: black;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.search-bar .clear-query-btn {
+    background: none;
+    border: none;
+    font-family: unset;
+    font-size: unset;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border: 0;
+    color: black;
+}
+.search-bar .clear-query-btn:hover {
+    color: #333;
+}
+.input-results {
+    border-top: 1px solid grey;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    padding: 0.25rem;
+}
+.input-results.visible {
+    display: flex;
+}
+.input-results .input-suggestion {
+    padding: 0.25rem;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    color: black;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+.input-suggestion b {
+    font-family: titleFont, sans-serif;
+    font-weight: bold;
+    margin-right: 1ch;
+}
+.input-suggestion:not(:has(img)) {
+    width: 100%;
+}
+.input-results .input-suggestion:hover {
+    background-color: #eee;
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+    #editor-sidebar {
+        position: relative;
+    }
+    .card-bank {
+        overflow-x: auto;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0.5rem;
+    }
+    .search-bar {
+        position: absolute;
+        top: unset;
+        left: 0;
+        bottom: 0;
+    }
+    .input-results {
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        top: unset;
+        bottom: 100%;
+        border-bottom: 1px solid grey;
+    }
+}

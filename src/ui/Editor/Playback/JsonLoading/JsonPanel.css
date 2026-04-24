@@ -1,0 +1,40 @@
+.json-panel {
+    display: inline-block;
+    position: relative;
+}
+.json-panel .playback-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: unset !important;
+}
+.json-panel .playback-btn.active:hover {
+    background-color: #444 !important;
+}
+.json-panel .playback-btn.active {
+    background-color: #444;
+}
+.json-panel .save-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    border-radius: 0.5rem;
+    gap: 1px;
+    background-color: #777;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+.save-options .save-option {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    border-radius: 0;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.save-options .save-option:hover {
+    background-color: #555;
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Potentiometer Test</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background: #0f172a;
+                color: #e2e8f0;
+                display: grid;
+                place-items: center;
+                min-height: 100vh;
+            }
+            main {
+                width: min(600px, 90vw);
+                background: #111827;
+                border: 1px solid #1f2937;
+                border-radius: 12px;
+                padding: 24px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            }
+            h1 {
+                margin: 0 0 12px;
+                font-size: 1.4rem;
+                letter-spacing: 0.02em;
+            }
+            p {
+                margin: 6px 0;
+            }
+            button {
+                cursor: pointer;
+                background: linear-gradient(135deg, #22c55e, #16a34a);
+                color: #0b1a0f;
+                border: none;
+                border-radius: 8px;
+                padding: 10px 16px;
+                font-size: 1rem;
+                font-weight: 600;
+                box-shadow: 0 8px 20px rgba(34, 197, 94, 0.35);
+                transition:
+                    transform 150ms ease,
+                    box-shadow 150ms ease;
+            }
+            button:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 12px 24px rgba(34, 197, 94, 0.45);
+            }
+            button:active {
+                transform: translateY(0);
+                box-shadow: 0 6px 14px rgba(34, 197, 94, 0.35);
+            }
+            #status {
+                font-family:
+                    "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+                    monospace;
+                background: #0b1220;
+                border: 1px solid #1f2937;
+                border-radius: 8px;
+                padding: 12px;
+                margin-top: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Potentiometer Card Test</h1>
+            <p>
+                Use the slider (rendered by the card) then click the button to
+                read the current value.
+            </p>
+            <button id="read-btn">Read current value</button>
+            <div id="status">Current value: 0</div>
+        </main>
+        <script type="module" src="/src/test-potentiometer.ts"></script>
+    </body>
+</html>

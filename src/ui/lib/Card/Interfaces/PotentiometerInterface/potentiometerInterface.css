@@ -1,0 +1,50 @@
+.potentiometer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    cursor: ew-resize;
+    gap: calc(0.5rem * var(--zoom, 1));
+    padding-left: calc(3rem * var(--zoom, 1));
+}
+.potentiometer.disabled {
+    pointer-events: none;
+}
+.potentiometer-knob {
+    width: calc(2rem * var(--zoom, 1));
+    height: calc(2rem * var(--zoom, 1));
+    background: linear-gradient(to bottom, #bbbbbb, #222);
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 0px calc(4px * var(--zoom, 1)) calc(4px * var(--zoom), 1)
+        rgba(0, 0, 0, 0.3);
+}
+.potentiometer-indicator {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #999;
+    top: calc(1px * var(--zoom, 1));
+    left: calc(1px * var(--zoom, 1));
+    width: calc(100% - calc(2px * var(--zoom, 1)));
+    height: calc(100% - calc(2px * var(--zoom, 1)));
+}
+.potentiometer-indicator:after {
+    content: "";
+    position: absolute;
+    top: calc(2px * var(--zoom, 1));
+    left: calc(calc(1rem - 2px) * var(--zoom, 1));
+    width: calc(2px * var(--zoom, 1));
+    height: calc(0.5rem * var(--zoom, 1));
+    background-color: #444;
+}
+.potentiometer-value {
+    font-size: calc(0.7rem * var(--zoom, 1));
+    line-height: 1;
+    padding: calc(0.2rem * var(--zoom, 1)) calc(0.4rem * var(--zoom, 1));
+    width: 4ch;
+    border-radius: calc(100px * var(--zoom, 1));
+    font-family: monospace;
+    background-color: rgba(0, 0, 0, 0.1);
+    user-select: none;
+}

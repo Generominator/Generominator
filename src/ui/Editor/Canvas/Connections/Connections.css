@@ -1,0 +1,27 @@
+.connection-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    overflow: visible;
+    pointer-events: none;
+    transform-origin: 0 0;
+}
+.connection-layer path {
+    stroke-dashoffset: 2000;
+    stroke-dasharray: 2000 2000;
+    animation: fillStroke 1s ease-out forwards;
+}
+@keyframes fillStroke {
+    99% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: none;
+    }
+}
+.connection-layer path {
+    fill: none;
+}

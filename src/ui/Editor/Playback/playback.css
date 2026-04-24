@@ -1,0 +1,74 @@
+.playback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2rem 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
+.playback h1 {
+    font-size: 2rem;
+    margin-top: 0;
+}
+.playback .error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+.playback .btn-row {
+    width: calc(100% - 2rem);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.playback .playback-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    background-color: #666;
+    cursor: pointer;
+    width: 100%;
+    transition:
+        padding 0.3s ease-in-out,
+        width 0.3s ease-in-out;
+}
+.playback .playback-btn:not(:disabled):hover {
+    background-color: #777;
+}
+.playback .playback-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.playback .playback-btn.playing {
+    padding: 0.5rem 2rem;
+    background: linear-gradient(
+        to right,
+        #444 0%,
+        #888 20%,
+        #444 40%,
+        #888 60%,
+        #444 80%,
+        #888 100%
+    );
+    background-size: 500% 100%;
+    animation: run 5s linear infinite;
+}
+
+@media (max-width: 900px) {
+    .playback {
+        padding: 1rem 0.75rem;
+    }
+    .playback h1 {
+        font-size: 1.5rem;
+    }
+}
+@keyframes run {
+    0% {
+        background-position-x: 100%;
+    }
+    100% {
+        background-position-x: 0%;
+    }
+}

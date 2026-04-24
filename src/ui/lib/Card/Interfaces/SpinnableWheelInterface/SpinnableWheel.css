@@ -1,0 +1,50 @@
+.wheel-ui-container {
+    padding: calc(15px * var(--zoom, 1)) 0;
+    user-select: none;
+}
+.card.docked .wheel-ui-container {
+    pointer-events: none;
+}
+.carnival-needle {
+    width: 0;
+    height: 0;
+    border-left: calc(8px * var(--zoom, 1)) solid transparent;
+    border-right: calc(8px * var(--zoom, 1)) solid transparent;
+    border-top: calc(16px * var(--zoom, 1)) solid red;
+    margin: 0 auto;
+    margin-bottom: calc(-10px * var(--zoom, 1));
+    position: relative;
+    z-index: 2;
+}
+.carnival-wheel {
+    width: calc(120px * var(--zoom, 1));
+    height: calc(120px * var(--zoom, 1));
+    border-radius: 50%;
+    border: calc(6px * var(--zoom, 1)) solid black;
+    cursor: grab;
+    margin: 0 auto;
+    background: conic-gradient(
+        #f39c12 0deg 36deg,
+        white 36deg 72deg,
+        #f39c12 72deg 108deg,
+        white 108deg 144deg,
+        #f39c12 144deg 180deg,
+        white 180deg 216deg,
+        #f39c12 216deg 252deg,
+        white 252deg 288deg,
+        #f39c12 288deg 324deg,
+        white 324deg 360deg
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.wheel-segment-text {
+    position: absolute;
+    height: 100%;
+    padding-top: calc(8px * var(--zoom, 1));
+    font-size: calc(12px * var(--zoom, 1));
+    font-weight: bold;
+    color: black;
+}

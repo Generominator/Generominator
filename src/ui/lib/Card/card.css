@@ -1,0 +1,176 @@
+.card {
+    --background: #fff;
+    width: calc(220px * var(--zoom, 1));
+    min-height: calc(146.667px * var(--zoom, 1));
+    border-radius: calc(8.8px * var(--zoom, 1));
+    flex-shrink: 0;
+    background-color: var(--background);
+    color: #000;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+    cursor: grab;
+    touch-action: none;
+}
+
+.card.debug {
+    border: 3px solid transparent;
+    background-image:
+        linear-gradient(var(--card-bg, #fff), var(--card-bg, #fff)),
+        repeating-linear-gradient(45deg, #f8d308 0 6px, #111 6px 12px);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.card.dragging {
+    pointer-events: none;
+    transform: rotate(-2deg);
+}
+.card-placeholder {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Inputs and outputs */
+
+.card .row-input,
+.card .row-output {
+    padding: calc(3.08px * var(--zoom, 1));
+    min-height: calc(29.7px * var(--zoom, 1));
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card .row-input {
+    align-items: flex-start;
+    border-radius: calc(8.8px * var(--zoom, 1)) calc(8.8px * var(--zoom, 1)) 0 0;
+}
+.card .row-input.empty {
+    background-color: hsla(220, 90%, 60%, 0.5);
+}
+.card .row-output {
+    align-items: flex-end;
+    border-radius: 0 0 calc(8.8px * var(--zoom, 1)) calc(8.8px * var(--zoom, 1));
+}
+.card .row-output.empty {
+    background-color: hsla(3, 90%, 60%, 0.5);
+}
+
+.floating-editor {
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid #333;
+    border-radius: calc(4px * var(--zoom, 1));
+    left: calc(0.25rem * var(--zoom, 1));
+    width: calc(100% - calc(0.5rem * var(--zoom, 1)));
+    background-color: rgba(0, 0, 0, 0.8);
+    max-height: calc(150px * var(--zoom, 1));
+    color: white;
+    font-size: calc(8px * var(--zoom, 1));
+}
+.floating-editor svg {
+    width: 100%;
+    height: 100%;
+    max-height: calc(150px * var(--zoom, 1));
+}
+
+.port:has(.floating-editor):before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    height: calc(12px * var(--zoom, 1));
+    width: calc(3px * var(--zoom, 1));
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateX(-50%);
+}
+.port:has(.floating-editor .add-data-btn):before {
+    background-color: transparent;
+    width: 0;
+    border-left: calc(3px * var(--zoom, 1)) dotted rgba(107, 107, 107, 0.8);
+}
+.port:has(.floating-editor .add-data-btn.danger):before {
+    border-left-color: rgba(255, 165, 0, 0.8);
+}
+
+.card .row-input .port .floating-editor {
+    bottom: calc(100% + calc(15px * var(--zoom, 1)));
+}
+.card .row-input .port:has(.floating-editor):before {
+    bottom: calc(100% + calc(3px * var(--zoom, 1)));
+    border-top-color: rgba(0, 0, 0, 0.8);
+}
+
+.card .row-output .port .floating-editor {
+    top: calc(100% + calc(15px * var(--zoom, 1)));
+}
+.card .row-output .port:has(.floating-editor):before {
+    top: calc(100% + calc(3px * var(--zoom, 1)));
+    border-bottom-color: rgba(0, 0, 0, 0.8);
+}
+
+.card .port {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc(2px * var(--zoom, 1));
+    width: 100%;
+    border-radius: calc(6px * var(--zoom, 1));
+    cursor: pointer;
+}
+.card.docked .port {
+    pointer-events: none;
+}
+.card .port:not(:has(.floating-editor:hover)):hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.card .port span {
+    font-size: calc(7.5px * var(--zoom, 1));
+    line-height: 85%;
+    padding: calc(2.7px * var(--zoom, 1));
+}
+.card .port img {
+    width: calc(27px * var(--zoom, 1));
+    height: calc(27px * var(--zoom, 1));
+    border-radius: calc(6px * var(--zoom, 1));
+    border-width: calc(1.5px * var(--zoom, 1));
+    pointer-events: none;
+}
+.card .port .result img {
+    width: 5px;
+    aspect-ratio: auto;
+    border-radius: 6px;
+    border-width: 1.5px;
+    pointer-events: none;
+}
+
+/* Content */
+
+.card .row-content {
+    padding: 0 calc(12px * var(--zoom, 1));
+    flex-grow: 1;
+}
+.card .row-content h3 {
+    font-size: calc(22px * var(--zoom, 1));
+    line-height: 85%;
+    padding: calc(2.2px * var(--zoom, 1));
+}
+.card .row-content p {
+    font-size: calc(11px * var(--zoom, 1));
+    line-height: 95%;
+    margin: 0;
+    padding: calc(0.88px * var(--zoom, 1)) calc(6.6px * var(--zoom, 1));
+}
+
+/* Custom elements within content */
+.card select {
+    font-size: calc(10px * var(--zoom, 1));
+}
+.card select option {
+    font-size: 1rem;
+    padding: 0;
+}

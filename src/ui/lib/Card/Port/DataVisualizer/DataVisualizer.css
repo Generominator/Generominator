@@ -1,0 +1,46 @@
+.waveform-visualizer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.waveform-visualizer canvas {
+    flex-shrink: 1;
+    max-width: calc(100% - 2.5em);
+}
+.waveform-samplerate {
+    position: absolute;
+    left: 0.25em;
+    bottom: 0.25em;
+    font-size: 0.75em;
+    white-space: nowrap;
+    line-height: 1;
+    color: #ccc;
+}
+.waveform-visualizer button {
+    font-size: 1em;
+    width: 10%;
+    aspect-ratio: 1;
+    padding: 0;
+    line-height: 0;
+    margin: 0 0.25em;
+    border-radius: 50%;
+    border: none;
+}
+.waveform-visualizer button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.waveform-playback-head {
+    position: absolute;
+    top: 0;
+    left: calc(var(--percent, 0) * calc(90% - 0.5em));
+    width: 2px;
+    height: 100%;
+    background-color: red;
+}
+.image-visualizer {
+    display: block;
+    max-width: 100%;
+    max-height: calc(150px * var(--zoom, 1));
+    object-fit: contain;
+}
